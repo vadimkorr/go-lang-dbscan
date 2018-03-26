@@ -1,3 +1,7 @@
+# Go cheatsheet
+
+## **Basics**
+
 ### Packages
 * program made of pkgs
 * start running in pkg `main`
@@ -93,3 +97,97 @@ func swap(x, y string) (string, string) {
 * `const`
 * no `:=` syntax
 * `const Pi = 3.14` 
+
+## **Flow control**
+
+### For
+* 
+```go
+for i:=0; i<10; i++ {
+
+}
+```
+* `{ }` are required
+* init and post are optional
+```go
+sum := 1
+for ; sum < 1000; {
+    sum += sum
+}
+```
+* `while` loop
+```go
+sum := 1
+for sum < 1000 {
+    sum += sum
+}
+```
+* infinite loop
+```go
+for {
+    
+}
+```
+* If
+```go
+if x < 0 {
+
+}
+// or 
+if (x < 0) {
+
+}
+```
+### If with a short statement
+*
+```go
+if v := math.Pow(x, n); v < lim {
+    return v
+}
+```
+### If and else
+*
+```go
+if x < 10 {
+
+} else {
+
+}
+```
+* variables declared inside short statement are also available inside any of `else` blocks
+
+### Switch
+* runs only selected case
+* case need not to be constant
+*
+```go
+switch os := runtime.GOOS: os {
+    case "darwin":
+        fmt.Println("OS X.")
+    case "linux":
+        fmt.Println("Linux.")
+    default: 
+        fmt.Println("%s.", os)
+}
+```
+
+### Switch with no condition
+* clean way to write long if-then-else chains
+*
+```go
+t := time.Now()
+switch {
+    case t.Hour()<12:
+        fmt.Println("Good morning")
+    case t.Hour()<17:
+        fmt.Println("Good afternoon")
+    default:
+        fmt.Println("Good evening")
+}
+```
+### Defer
+* defers the exec of a func until the surrounding func returns
+* `defer fmt.Println("world")`
+
+### Stacking defers
+* Deferred function calls are pushed onto a stack
