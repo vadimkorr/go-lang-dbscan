@@ -191,3 +191,97 @@ switch {
 
 ### Stacking defers
 * Deferred function calls are pushed onto a stack
+
+## **More types**
+
+### Pointers
+
+* hold the memory address of value
+* `*T` is a pointer to a `T` value
+```go
+var p *int
+```
+* `&` operator generates a pointer
+```go
+i := 42
+p = &i
+```
+* `*` operator denotes the pointer's underlying value (dereferencing/indirecting)
+```go
+fmt.Println(*p)
+*p = 21
+```
+
+### Structs
+* `struct` is a collection of fields
+* 
+```go
+type Vertex struct {
+    X int
+    Y int
+}
+fmt.Println(Vertex{1, 2})
+```
+* Struct fields are accessing using a dot
+```go
+v := Vertex{1, 2}
+v.X = 4
+```
+### Pointers to a struct
+*
+```go
+(*p).X // or just p.X
+```
+*
+```go
+v := Vertex{1, 2}
+p := &v
+p.X = 1e9
+```
+
+### Struct Literals
+* a newly allocated struct value by listing the values of its fields
+* 
+```go
+v1 = Vertex{1, 2} // has type Vertex
+v2 = Vertex{X: 1} // Y:0 is implicit
+v3 = Vertex{} // X:0 and Y:0
+p = &Vertex{1, 2} // has type *Vertex
+```
+### Arrays
+* The type `[n]T` is an array of `n` values of type `T`
+* `var a [10]int` declares a variable `a` as an array of ten integers
+
+### Slices
+* an array has a fixed size 
+* slice - is a dynamically-sized, flexible view into the elements of an array
+* The type `[]T` is a slice with elements of type `T`
+* Slice is formed by specifying two indices, a low and high bound, separated by a colon: `a[low : high]` - includes the first, excludes the last
+*
+```go
+primes := [6]int{2, 3, 5, 7, 11, 13}
+var s []int = primes[1:4]
+```
+
+### Slices are like references to arrays
+
+* A slice does not store any data, it just describes a section of an underlying array
+* Changing the elements of a slice modifies the corresponding elements of its underlying array
+
+### Slice literals
+* A slice literal is like an array w/out the length
+* array literal `[3]bool{true, true, false}`
+* this creates the same array as above, then builds a slice that references it:
+`[]bool{true, true, false}`
+
+### Slice defaults
+* when slicing, you may omit the high or low bounds to use their defaults instead
+* 
+```go
+var a [10]int
+// these slice expressions are eq
+a[0:10]
+a[:10]
+a[0:]
+a[:]
+```

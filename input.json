@@ -1,0 +1,64 @@
+[{
+    "id": 0,
+    "label": "undefined",
+    "pos": {
+        "x": 2,
+        "y": 6
+    }
+}, {
+    "id": 1,
+    "label": "undefined",
+    "pos": {
+        "x": 2,
+        "y": 4
+    }
+}, {
+    "id": 2,
+    "label": "undefined",
+    "pos": {
+        "x": 2,
+        "y": 2
+    }
+}, {
+    "id": 3,
+    "label": "undefined",
+    "pos": {
+        "x": 4,
+        "y": 4
+    }
+}, {
+    "id": 4,
+    "label": "undefined",
+    "pos": {
+        "x": 7,
+        "y": 4
+    }
+}, {
+    "id": 5,
+    "label": "undefined",
+    "pos": {
+        "x": 10,
+        "y": 4
+    }
+}, {
+    "id": 6,
+    "label": "undefined",
+    "pos": {
+        "x": 12,
+        "y": 6
+    }
+}, {
+    "id": 7,
+    "label": "undefined",
+    "pos": {
+        "x": 12,
+        "y": 4
+    }
+}, {
+    "id": 8,
+    "label": "undefined",
+    "pos": {
+        "x": 12,
+        "y": 2
+    }
+}]
